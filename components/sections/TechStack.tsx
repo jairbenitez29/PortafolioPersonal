@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+// Trigger redeploy
 import {
   SiTypescript,
   SiJavascript,
