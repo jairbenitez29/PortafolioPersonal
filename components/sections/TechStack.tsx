@@ -169,10 +169,11 @@ export default function TechStack() {
                               />
                             </div>
                           ) : IconComponent ? (
-                            <IconComponent
-                              className="w-12 h-12 transition-colors duration-300"
-                              color={tech.color}
-                            />
+                            <div style={{ color: tech.color }}>
+                              <IconComponent
+                                className="w-12 h-12 transition-colors duration-300"
+                              />
+                            </div>
                           ) : null}
                           <span className="text-sm font-medium text-foreground/80 group-hover:text-primary transition-colors text-center">
                             {tech.name}
