@@ -53,35 +53,35 @@ export default function TechStack() {
 
   const technologies = {
     frontend: [
-      { name: 'TypeScript', icon: 'SiTypescript' },
-      { name: 'JavaScript', icon: 'SiJavascript' },
-      { name: 'Next.js', icon: 'SiNextdotjs' },
-      { name: 'React', icon: 'SiReact' },
-      { name: 'Tailwind CSS', icon: 'SiTailwindcss' },
-      { name: 'HTML', icon: 'SiHtml5' },
-      { name: 'Flutter', icon: 'SiFlutter' },
-      { name: 'Dart', icon: 'SiDart' },
+      { name: 'TypeScript', icon: 'SiTypescript', color: '#3178C6' },
+      { name: 'JavaScript', icon: 'SiJavascript', color: '#F7DF1E' },
+      { name: 'Next.js', icon: 'SiNextdotjs', color: '#FFFFFF' },
+      { name: 'React', icon: 'SiReact', color: '#61DAFB' },
+      { name: 'Tailwind CSS', icon: 'SiTailwindcss', color: '#06B6D4' },
+      { name: 'HTML', icon: 'SiHtml5', color: '#E34F26' },
+      { name: 'Flutter', icon: 'SiFlutter', color: '#02569B' },
+      { name: 'Dart', icon: 'SiDart', color: '#0175C2' },
     ],
     backend: [
-      { name: 'Node.js', icon: 'SiNodedotjs' },
-      { name: 'Prisma', icon: 'SiPrisma' },
-      { name: 'tRPC', type: 'image', image: '/logos/trpc.png' },
-      { name: 'Zod', icon: 'TbShield' },
-      { name: 'PHP', icon: 'SiPhp' },
-      { name: 'Python', icon: 'SiPython' },
+      { name: 'Node.js', icon: 'SiNodedotjs', color: '#339933' },
+      { name: 'Prisma', icon: 'SiPrisma', color: '#2D3748' },
+      { name: 'tRPC', type: 'image' as const, image: '/logos/trpc.png', color: '#2596BE' },
+      { name: 'Zod', icon: 'TbShield', color: '#3E67B1' },
+      { name: 'PHP', icon: 'SiPhp', color: '#777BB4' },
+      { name: 'Python', icon: 'SiPython', color: '#3776AB' },
     ],
     database: [
-      { name: 'MySQL', icon: 'SiMysql' },
-      { name: 'MongoDB', icon: 'SiMongodb' },
+      { name: 'MySQL', icon: 'SiMysql', color: '#4479A1' },
+      { name: 'MongoDB', icon: 'SiMongodb', color: '#47A248' },
     ],
     cloud: [
-      { name: 'AWS', icon: 'SiAmazon' },
-      { name: 'Hostinger', type: 'image', image: '/logos/hostinger.png.png' },
+      { name: 'AWS', icon: 'SiAmazon', color: '#FF9900' },
+      { name: 'Hostinger', type: 'image' as const, image: '/logos/hostinger.png.png', color: '#673FBD' },
     ],
     tools: [
-      { name: 'Visual Studio Code', icon: 'VscCode' },
-      { name: 'n8n', type: 'image', image: '/logos/n8n.png' },
-      { name: 'Git', icon: 'SiGit' },
+      { name: 'Visual Studio Code', icon: 'VscCode', color: '#007ACC' },
+      { name: 'n8n', type: 'image' as const, image: '/logos/n8n.png', color: '#EA4B71' },
+      { name: 'Git', icon: 'SiGit', color: '#F05032' },
     ],
   };
 
@@ -170,7 +170,8 @@ export default function TechStack() {
                             </div>
                           ) : IconComponent ? (
                             <IconComponent
-                              className="w-12 h-12 transition-colors duration-300 text-primary"
+                              className="w-12 h-12 transition-colors duration-300"
+                              color={tech.color}
                             />
                           ) : null}
                           <span className="text-sm font-medium text-foreground/80 group-hover:text-primary transition-colors text-center">
@@ -180,7 +181,10 @@ export default function TechStack() {
 
                         {/* Hover glow effect */}
                         <div
-                          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10 bg-primary/20"
+                          className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10"
+                          style={{
+                            background: tech.color ? `radial-gradient(circle at center, ${tech.color}40, transparent 70%)` : undefined,
+                          }}
                         />
                       </motion.div>
                     );
