@@ -42,7 +42,6 @@ export default function Projects() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: 'easeOut',
       },
     },
   };
