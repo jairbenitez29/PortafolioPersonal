@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "stack": "Stack",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Jair Benítez",
+    "role": "Desarrollador Independiente",
+    "description": "Desarrollador apasionado por crear experiencias web excepcionales con tecnologías modernas",
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contáctame"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Conoce más sobre mi trayectoria",
+    "bio": "Soy un desarrollador con experiencia en la creación de aplicaciones web modernas y escalables, así como en el desarrollo de aplicaciones móviles. Mi enfoque está en escribir código limpio, mantener las mejores prácticas y crear soluciones que realmente importen.",
+    "experience": "Experiencia trabajando con tecnologías de vanguardia en desarrollo web y móvil",
+    "passion": "Apasionado por el aprendizaje continuo y la resolución de problemas complejos",
+    "motto": "Mis dudas hacen mi conocimiento"
+  },
+  "stack": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Tecnologías con las que trabajo",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Bases de Datos",
+      "cloud": "Cloud & Hosting",
+      "tools": "Herramientas"
+    },
+    "technologies": {
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "nextjs": "Next.js",
+      "react": "React",
+      "prisma": "Prisma",
+      "trpc": "tRPC",
+      "zod": "Zod",
+      "tailwind": "Tailwind CSS",
+      "html": "HTML",
+      "php": "PHP",
+      "nodejs": "Node.js",
+      "mysql": "MySQL",
+      "aws": "AWS",
+      "hostinger": "Hostinger",
+      "n8n": "n8n"
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Algunos de mis trabajos recientes",
+    "disclaimer": "Por confidencialidad y protección de datos de los clientes, no se muestran accesos a demos o repositorios",
+    "filter": {
+      "all": "Todos",
+      "crud": "CRUD",
+      "trending": "Trending",
+      "specialized": "Especializado"
+    },
+    "card": {
+      "demo": "Ver Demo",
+      "code": "Ver Código",
+      "client": "Cliente",
+      "personal": "Proyecto Personal",
+      "technologies": "Tecnologías"
+    },
+    "empty": "Próximamente más proyectos..."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Trabajemos juntos",
+    "description": "¿Tienes un proyecto en mente? ¡Hablemos! Estoy disponible para nuevas oportunidades.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "social": "Redes Sociales"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "by": "por"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "tryAgain": "Intentar de nuevo"
+  }
+}

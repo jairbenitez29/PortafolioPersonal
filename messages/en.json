@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "stack": "Stack",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Jair Benítez",
+    "role": "Developer Freelancer",
+    "description": "Passionate developer creating exceptional web experiences with modern technologies",
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Learn more about my journey",
+    "bio": "I'm a Developer with experience building modern and scalable web applications, as well as mobile app development. My focus is on writing clean code, maintaining best practices, and creating solutions that truly matter.",
+    "experience": "Experience working with cutting-edge technologies in web and mobile development",
+    "passion": "Passionate about continuous learning and solving complex problems",
+    "motto": "My doubts shape my knowledge"
+  },
+  "stack": {
+    "title": "Tech Stack",
+    "subtitle": "Technologies I work with",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "cloud": "Cloud & Hosting",
+      "tools": "Tools"
+    },
+    "technologies": {
+      "typescript": "TypeScript",
+      "javascript": "JavaScript",
+      "python": "Python",
+      "nextjs": "Next.js",
+      "react": "React",
+      "prisma": "Prisma",
+      "trpc": "tRPC",
+      "zod": "Zod",
+      "tailwind": "Tailwind CSS",
+      "html": "HTML",
+      "php": "PHP",
+      "nodejs": "Node.js",
+      "mysql": "MySQL",
+      "aws": "AWS",
+      "hostinger": "Hostinger",
+      "n8n": "n8n"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Some of my recent work",
+    "disclaimer": "Due to confidentiality and client data protection, demos and repository access are not available",
+    "filter": {
+      "all": "All",
+      "crud": "CRUD",
+      "trending": "Trending",
+      "specialized": "Specialized"
+    },
+    "card": {
+      "demo": "Live Demo",
+      "code": "View Code",
+      "client": "Client",
+      "personal": "Personal Project",
+      "technologies": "Technologies"
+    },
+    "empty": "More projects coming soon..."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "description": "Have a project in mind? Let's talk! I'm available for new opportunities.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "social": "Social Media"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "by": "by"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "tryAgain": "Try again"
+  }
+}
