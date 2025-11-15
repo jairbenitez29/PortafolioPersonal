@@ -129,7 +129,7 @@ export default function About() {
 
                   {/* Profile Image */}
                   <Image
-                    src="/profile/foto-perfil.jpg"
+                    src="/profile/jairporfolio-removebg-preview.png"
                     alt="Profile"
                     fill
                     sizes="(max-width: 768px) 288px, 384px"
