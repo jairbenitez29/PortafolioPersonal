@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
-// Trigger redeploy
+import { projects } from '@/lib/data';
 import {
   SiTypescript,
   SiJavascript,
@@ -109,6 +109,37 @@ export default function TechStack() {
     },
   };
 
+  const handleTechClick = (techName: string) => {
+    // Buscar un proyecto que use esta tecnología
+    const projectWithTech = projects.find(project =>
+      project.technologies.some(tech =>
+        tech.toLowerCase().includes(techName.toLowerCase()) ||
+        techName.toLowerCase().includes(tech.toLowerCase())
+      )
+    );
+
+    if (projectWithTech) {
+      // Scroll a la sección de proyectos
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Después del scroll, resaltar el proyecto
+        setTimeout(() => {
+          const projectElement = document.getElementById(`project-${projectWithTech.id}`);
+          if (projectElement) {
+            projectElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            // Agregar efecto de resaltado temporal
+            projectElement.classList.add('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
+            setTimeout(() => {
+              projectElement.classList.remove('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
+            }, 2000);
+          }
+        }, 800);
+      }
+    }
+  };
+
   return (
     <section
       id="stack"
@@ -156,6 +187,8 @@ export default function TechStack() {
                           scale: 1.1,
                           y: -5,
                         }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleTechClick(tech.name)}
                         className="group relative bg-secondary/50 backdrop-blur-sm border border-primary/20 rounded-xl p-6 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 cursor-pointer"
                       >
                         <div className="flex flex-col items-center gap-3">

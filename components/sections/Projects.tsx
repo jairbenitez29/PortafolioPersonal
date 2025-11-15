@@ -81,6 +81,7 @@ export default function Projects() {
                 projects.map((project, index) => (
                   <motion.div
                     key={project.id}
+                    id={`project-${project.id}`}
                     initial={{ opacity: 0, x: 50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
