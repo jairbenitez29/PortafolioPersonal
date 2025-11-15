@@ -36,35 +36,11 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-background via-secondary/20 to-background"
+      className="py-20 md:py-32 relative overflow-hidden"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            rotate: [0, 90, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            rotate: [90, 0, 90],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-        />
-      </div>
+      {/* Subtle Background */}
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -73,7 +49,7 @@ export default function About() {
           animate={isInView ? 'visible' : 'hidden'}
         >
           {/* Title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <motion.div variants={itemVariants} className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               <span className="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
                 {t('title')}
@@ -84,161 +60,86 @@ export default function About() {
             </p>
           </motion.div>
 
-          {/* Main Content with Photo */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 max-w-7xl mx-auto">
-            {/* Profile Photo Section - LEFT SIDE */}
-            <motion.div
-              variants={itemVariants}
-              className="flex justify-center lg:justify-end order-2 lg:order-1"
-            >
-              <div className="relative group">
-                {/* Animated outer ring */}
-                <motion.div
-                  animate={{
-                    rotate: 360,
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute -inset-4 bg-gradient-to-r from-primary via-primary-light to-primary rounded-full opacity-75 blur-lg group-hover:opacity-100 transition-opacity duration-500"
-                />
+          {/* Profile Photo Centered */}
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-center mb-20"
+          >
+            <div className="relative">
+              {/* Subtle glow effect */}
+              <div className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-primary-light/20 to-primary/20 rounded-full blur-2xl opacity-60" />
 
-                {/* Second animated ring */}
-                <motion.div
-                  animate={{
-                    rotate: -360,
-                  }}
-                  transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute -inset-2 bg-gradient-to-r from-primary-light via-primary to-primary-light rounded-full opacity-50 blur group-hover:opacity-75 transition-opacity duration-500"
+              {/* Photo container */}
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-2xl shadow-primary/30"
+              >
+                <Image
+                  src="/profile/jairporfolio-removebg-preview.png"
+                  alt="Profile"
+                  fill
+                  sizes="(max-width: 768px) 256px, 320px"
+                  className="object-cover object-center"
+                  priority
                 />
+              </motion.div>
+            </div>
+          </motion.div>
 
-                {/* Photo container */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/50"
+          {/* Info Cards - Below Photo */}
+          <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+            <div className="bg-secondary/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+              <div className="w-14 h-14 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent z-10" />
-
-                  {/* Profile Image */}
-                  <Image
-                    src="/profile/jairporfolio-removebg-preview.png"
-                    alt="Profile"
-                    fill
-                    sizes="(max-width: 768px) 288px, 384px"
-                    className="object-cover object-center"
-                    priority
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                   />
-
-                  {/* Floating particles */}
-                  {[...Array(6)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{
-                        y: [0, -30, 0],
-                        opacity: [0.2, 1, 0.2],
-                      }}
-                      transition={{
-                        duration: 3 + i,
-                        repeat: Infinity,
-                        delay: i * 0.5,
-                      }}
-                      className="absolute w-2 h-2 bg-primary rounded-full"
-                      style={{
-                        left: `${20 + i * 15}%`,
-                        top: `${10 + i * 10}%`,
-                      }}
-                    />
-                  ))}
-                </motion.div>
-
-                {/* Decorative elements */}
-                <motion.div
-                  animate={{
-                    scale: [1, 1.1, 1],
-                    opacity: [0.3, 0.6, 0.3],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                  }}
-                  className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"
-                />
-                <motion.div
-                  animate={{
-                    scale: [1.1, 1, 1.1],
-                    opacity: [0.6, 0.3, 0.6],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                  }}
-                  className="absolute -top-4 -left-4 w-32 h-32 bg-primary-light/20 rounded-full blur-xl"
-                />
+                </svg>
               </div>
-            </motion.div>
+              <h3 className="text-xl font-semibold mb-3 text-primary">
+                {t('experience')}
+              </h3>
+              <p className="text-foreground/70 leading-relaxed">
+                {t('bio')}
+              </p>
+            </div>
 
-            {/* Info Cards - RIGHT SIDE */}
-            <motion.div variants={itemVariants} className="space-y-6 order-1 lg:order-2">
-              <div className="bg-secondary/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                <div className="w-14 h-14 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                  <svg
-                    className="w-8 h-8 text-primary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t('experience')}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {t('bio')}
-                </p>
+            <div className="bg-secondary/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+              <div className="w-14 h-14 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
               </div>
-
-              <div className="bg-secondary/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
-                <div className="w-14 h-14 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
-                  <svg
-                    className="w-8 h-8 text-primary"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">
-                  Pasión
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {t('passion')}
-                </p>
-                <p className="text-foreground/80 leading-relaxed mt-3 font-medium italic">
-                  {t('motto')}
-                </p>
-              </div>
-            </motion.div>
-          </div>
+              <h3 className="text-xl font-semibold mb-3 text-primary">
+                Pasión
+              </h3>
+              <p className="text-foreground/70 leading-relaxed">
+                {t('passion')}
+              </p>
+              <p className="text-foreground/80 leading-relaxed mt-3 font-medium italic">
+                {t('motto')}
+              </p>
+            </div>
+          </motion.div>
 
           {/* Stats */}
           <motion.div
