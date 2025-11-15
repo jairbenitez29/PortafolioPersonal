@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
 import { contactInfo } from '@/lib/data';
-import AstronautAnimation from '@/components/ui/AstronautAnimation';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -90,13 +89,13 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex justify-center items-center">
           {/* Text Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center"
           >
             <motion.div variants={itemVariants} className="mb-6">
               <span className="text-primary text-lg md:text-xl font-medium">
@@ -128,7 +127,7 @@ export default function Hero() {
             {/* Social Media Icons */}
             <motion.div
               variants={itemVariants}
-              className="flex gap-6 justify-center lg:justify-start items-center"
+              className="flex gap-6 justify-center items-center"
             >
           {/* GitHub */}
           <motion.a
@@ -195,11 +194,6 @@ export default function Hero() {
           </motion.a>
         </motion.div>
           </motion.div>
-
-          {/* Astronaut Animation */}
-          <div className="flex justify-center items-center order-1 lg:order-2">
-            <AstronautAnimation />
-          </div>
         </div>
       </div>
     </section>
