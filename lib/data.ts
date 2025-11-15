@@ -44,7 +44,7 @@ export const projects: Project[] = [
     title: 'Sistema de Educación Educadia',
     description: 'Plataforma integral para la gestión y aplicación de exámenes escolares con sistema de retroalimentación automatizada.',
     image: '/proyectosdestacados/sistemaeducadia/educadia1.png',
-    technologies: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Prisma', 'tRPC', 'Tailwind CSS', 'Zod', 'MySQL'],
+    technologies: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Node.js', 'Prisma', 'tRPC', 'Tailwind CSS', 'Zod', 'MySQL'],
     category: 'specialized',
     client: 'Educadia',
     fullDescription: 'Sistema robusto diseñado para la administración y aplicación de evaluaciones académicas en instituciones educativas. Implementa autenticación de múltiples roles, panel administrativo completo para la gestión de exámenes, asignación masiva de evaluaciones, seguimiento individual de resultados por estudiante, retroalimentación inmediata de respuestas correctas e incorrectas, y generación de reportes detallados exportables a Excel con filtros personalizables por escuela y grado académico.',
