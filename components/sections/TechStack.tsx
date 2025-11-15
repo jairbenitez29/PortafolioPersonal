@@ -110,32 +110,34 @@ export default function TechStack() {
   };
 
   const handleTechClick = (techName: string) => {
-    // Buscar un proyecto que use esta tecnología
-    const projectWithTech = projects.find(project =>
+    // Buscar TODOS los proyectos que usan esta tecnología
+    const projectsWithTech = projects.filter(project =>
       project.technologies.some(tech =>
         tech.toLowerCase().includes(techName.toLowerCase()) ||
         techName.toLowerCase().includes(tech.toLowerCase())
       )
     );
 
-    if (projectWithTech) {
+    if (projectsWithTech.length > 0) {
       // Scroll a la sección de proyectos
       const projectsSection = document.getElementById('projects');
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Después del scroll, resaltar el proyecto
-        setTimeout(() => {
-          const projectElement = document.getElementById(`project-${projectWithTech.id}`);
-          if (projectElement) {
-            projectElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            // Agregar efecto de resaltado temporal
-            projectElement.classList.add('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
-            setTimeout(() => {
-              projectElement.classList.remove('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
-            }, 2000);
-          }
-        }, 800);
+        // Resaltar cada proyecto uno por uno con animación secuencial
+        projectsWithTech.forEach((project, index) => {
+          setTimeout(() => {
+            const projectElement = document.getElementById(`project-${project.id}`);
+            if (projectElement) {
+              projectElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+              // Agregar efecto de resaltado temporal
+              projectElement.classList.add('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
+              setTimeout(() => {
+                projectElement.classList.remove('ring-4', 'ring-primary', 'ring-offset-4', 'ring-offset-background');
+              }, 2500);
+            }
+          }, 800 + (index * 3000)); // 800ms inicial + 3 segundos entre cada proyecto
+        });
       }
     }
   };
